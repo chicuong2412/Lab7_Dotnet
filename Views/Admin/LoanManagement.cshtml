@@ -1,0 +1,201 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	Layout = "_AdminLayout";
+}
+
+@model List<Loan>
+
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+
+
+	$('#addLoanModal').on('shown.bs.modal', function (event) {
+	$('#addLoanFormBody').load('/Loans/Create');
+	});
+
+	$(document).on('submit', '#addLoanForm', function (e) {
+	e.preventDefault();
+
+	var form = $(this);
+	console.log(form.attr('action'))
+	$.ajax({
+	url: form.attr('action') || '/Loans/Create',
+	type: 'POST',
+	data: form.serialize(),
+	success: function (result) {
+		console.log(result);
+	if (result.success) {
+	confirm("Loan created successfully!");
+	$('#addLoanModal').modal('hide');
+	location.reload();
+	} else {
+	$('#addLoanFormBody').html(result);
+	}
+	}
+	});
+
+	});
+
+	$('#editLoanModal').on('show.bs.modal', function (event) {
+	var button = $(event.relatedTarget);
+	var bookId = button[0].getAttribute("Loan-id");
+	$('#editLoanButton').attr("Loan-id", bookId);
+	$('#editLoanFormBody').load('/Loans/Edit/' + bookId);
+
+	});
+	$(document).on('submit', '#editLoanForm', function (e) {
+	e.preventDefault();
+	var LoanId = $('#editLoanButton').attr('Loan-id');
+	var form = $(this);
+	$.ajax({
+	url: form.attr('action') + "/" + LoanId || '/Loans/Edit/' + LoanId,
+	type: 'POST',
+	data: form.serialize(),
+	success: function (result) {
+	if (result.success) {
+	$('#editLoanModal').modal('hide');
+	location.reload();
+	} else {
+	$('#editLoanFormBody').html(result);
+	}
+	}
+	});
+	});
+
+
+	$('#deleteLoanModal').on('show.bs.modal', function (event) {
+	var button = $(event.relatedTarget);
+	var LoanId = button[0].getAttribute("Loan-id");
+	console.log(LoanId);
+	$('#deleteLoanButton').attr("Loan-id", LoanId);
+
+	});
+	$(document).on('submit', '#deleteLoanForm', function (e) {
+	e.preventDefault();
+	var LoanId = $('#deleteLoanButton').attr('Loan-id');
+	$.ajax({
+	url: '/Loans/Delete/' + LoanId,
+	type: 'DELETE',
+	success: function (result) {
+	$('#deleteLoanModal').modal('hide');
+	location.reload();
+	}
+	});
+	});
+
+	});
+</script>
+
+<div class="container-fluid" style="height:100%">
+	<div class="table-responsive">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					<div class="col-xs-6">
+						<h2>Manage <b>Loans</b></h2>
+					</div>
+					<div class="col-xs-6">
+						<a href="#addLoanModal" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addLoanModal"><i class="material-icons">&#xE147;</i> <span>Add New Loan</span></a>
+					</div>
+				</div>
+			</div>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Loan ID</th>
+						<th>Loan Date</th>
+						<th>Due Date</th>
+						<th>Return Date</th>
+						<th>User code</th>
+						<th>Book Code</th>
+						<th>Status</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var Loan in Model)
+					{
+
+						<tr>
+							<td>@Loan.LoanId</td>
+							<td>@Loan.LoanDate</td>
+							<td>@Loan.DueDate</td>
+							<td>@Loan.ReturnDate</td>
+							<td>@Loan.User?.UserCode</td>
+							<td>@Loan.Book?.BookCode</td>
+							<td>@Loan.Status</td>
+							<td>
+								<a href="#editLoanModal" class="edit" data-bs-toggle="modal" Loan-id="@Loan.LoanId"><i class="material-icons" title="Edit">&#xE254;</i></a>
+								<a href="#deleteLoanModal" class="delete" data-bs-toggle="modal" Loan-id="@Loan.LoanId"><i class="material-icons" title="Delete">&#xE872;</i></a>
+							</td>
+						</tr>
+					}
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+<!-- Add Modal HTML -->
+<div id="addLoanModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form id="addLoanForm" asp-controller="Loans" asp-action="Create">
+				<div class="modal-header d-flex justify-content-between">
+					<h4 class="modal-title">Add Loan</h4>
+					<button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close" style="font-size: 1.5rem;">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="addLoanFormBody">
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
+					<input id="addLoanButton" type="submit" class="btn btn-success" value="Add">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- Edit Modal HTML -->
+<div id="editLoanModal" class="modal fade" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form id="editLoanForm" asp-controller="Loans" asp-action="Edit">
+				<div class="modal-header  d-flex justify-content-between">
+					<h4 class="modal-title">Edit Loan</h4>
+					<button type="button" class="btn" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body" id="editLoanFormBody">
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
+					<input id="editLoanButton" type="submit" class="btn btn-info" value="Save">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- Delete Modal HTML -->
+<div id="deleteLoanModal" class="modal fade" aria-labelledby="deleteEmployeeModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form id="deleteLoanForm">
+				<div class="modal-header d-flex justify-content-between">
+					<h4 class="modal-title">Delete Loan</h4>
+					<button type="button" class="btn" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">
+					<p>Are you sure you want to delete these Records?</p>
+					<p class="text-warning"><small>This action cannot be undone.</small></p>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
+					<input id="deleteLoanButton" type="submit" class="btn btn-danger" value="Delete">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

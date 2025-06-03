@@ -1,0 +1,32 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model Book
+@{
+}
+<div class="container mt-4">
+    <div class="mb-4">
+        <h2 class="text-center">Thông tin chi tiết</h2>
+    </div>
+    <div class="row">
+        <div class="col-5">
+            <img style="width: 100%; height: 100%" src="@Model.Avatar" />
+        </div>
+        <div class="col-7">
+            <h3>@Model.Title</h3>
+            <p><span class="fw-bold">Chuyên mục: </span>
+                @foreach (var cate in @Model.Categories)
+                {
+                    <span>@cate.Name</span>
+                }    
+            </p>
+            <p><span class="fw-bold">Tác giả: </span>@Model.Publisher</p>
+            <p><span class="fw-bold">Nhà xuất bản: </span>@Model.Publisher</p>
+            <p><span class="fw-bold">Xuất bản năm: </span></p>
+            <p><span class="fw-bold">Giới thiệu: </span>@Model.Description</p>
+            <button class="btn btn-success">
+                <a class="nav-link text-white" asp-controller="Book" asp-action="ViewPDF" asp-route-bookCode="@Model.BookCode">Đọc sách online</a>
+            </button>
+        </div>
+    </div>
+</div>

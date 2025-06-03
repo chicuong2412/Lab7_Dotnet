@@ -1,0 +1,69 @@
+﻿@model Lab7_LeChiCuong_2131200001.Models.Book
+
+@{
+	ViewData["Title"] = "Edit";
+}
+
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<input type="hidden" asp-for="BookId" />
+<div class="form-group">
+	<label asp-for="Title" class="control-label"></label>
+	<input asp-for="Title" class="form-control" />
+	<span asp-validation-for="Title" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Description" class="control-label"></label>
+	<input asp-for="Description" class="form-control" />
+	<span asp-validation-for="Description" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="BookCode" class="control-label"></label>
+	<input asp-for="BookCode" class="form-control" />
+	<span asp-validation-for="BookCode" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Publisher" class="control-label"></label>
+	<input asp-for="Publisher" class="form-control" />
+	<span asp-validation-for="Publisher" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="TotalCopies" class="control-label"></label>
+	<input asp-for="TotalCopies" class="form-control" />
+	<span asp-validation-for="TotalCopies" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="AvailableCopies" class="control-label"></label>
+	<input asp-for="AvailableCopies" class="form-control" />
+	<span asp-validation-for="AvailableCopies" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="CreatedDate" class="control-label"></label>
+	<input asp-for="CreatedDate" class="form-control" />
+	<span asp-validation-for="CreatedDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Avatar" class="control-label"></label>
+	<input asp-for="Avatar" class="form-control" />
+	<span asp-validation-for="Avatar" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Pdf" class="control-label"></label>
+	<input asp-for="Pdf" class="form-control" />
+	<span asp-validation-for="Pdf" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Categories"></label>
+	<select asp-for="SelectedCategoryIds" class="form-control" asp-items="ViewBag.Categories"></select>
+</div>
+<div class="form-group">
+	<label asp-for="Authors"></label>
+	<select asp-for="SelectedAuthorIds" class="form-control" asp-items="ViewBag.Authors"></select>
+</div>
+
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

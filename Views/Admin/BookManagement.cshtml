@@ -1,0 +1,239 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<Book>
+@{
+	Layout = "_AdminLayout";
+}
+
+<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			$('#AddBookModal').on('shown.bs.modal', function (event) {
+				console.log("Open");
+				$('#createFormBookModal').load('/Books/Create');
+			});
+
+			$(document).on('submit', '#AddBookForm', function (e) {
+				e.preventDefault();
+				var form = $(this);
+				$.ajax({
+					url: '/api/books',
+					type: 'POST',
+					data: form.serialize(),
+					success: function (result) {
+						if (result.success) {
+							confirm("Book created successfully!");
+							$('#AddBookModal').modal('hide');
+							LoadBooks();
+						} else {
+							$('#AddValidText').html(result.message);
+						}
+					}
+				});
+			});
+
+			$('#editBookModal').on('show.bs.modal', function (event) {
+					var button = $(event.relatedTarget);
+					var bookId = button[0].getAttribute("book-id");
+					$('#buttonEditSave').attr("book-id", bookId);
+					$('#EditBookFormBody').load('/Books/Edit/' + bookId);
+
+			});
+
+			$(document).on('submit', '#editFormBook', function (e) {
+				e.preventDefault();
+				var bookId = $('#buttonEditSave').attr('book-id');
+				var form = $(this);
+				$.ajax({
+					url: `/api/books/${bookId}`,
+					type: 'PUT',
+					data: form.serialize(),
+					success: function (result) {
+						if (result.success) {
+							$('#editBookModal').modal('hide');
+							LoadBooks();
+						} else {
+							$('#EditValidText').html(result.message);
+						}
+					}
+				});
+			});
+
+			function LoadBooks() {
+				$.ajax({
+					url: '/api/books',
+					type: 'GET',
+					success: function (result) {
+						let listBooks = result;
+						let body = 	$("#BookTableBody");
+						body.html("");
+						listBooks.forEach(book => {
+							let authors = book.authors.map(author => `<span>${author.firstName}</span>`).join(", ");
+							let categories = book.categories.map(category => `<span>${category.name}</span>`).join(", ");
+							let row = `<tr>
+								<td>${book.bookCode}</td>
+								<td>${book.title}</td>
+								<td>
+									${authors}
+								</td>
+								<td>
+									${categories}
+								</td>
+								<td>${book.publisher}</td>
+								<td>${book.totalCopies}</td>
+								<td>${book.availableCopies}</td>
+								<td>
+									<a href="#editBookModal" class="edit" data-bs-toggle="modal" book-id="${book.bookId}"><i class="material-icons" title="Edit">&#xE254;</i></a>
+									<a href="#deleteBookModal" class="delete" book-id="${book.bookId}" data-bs-toggle="modal"><i class="material-icons" title="Delete">&#xE872;</i></a>
+								</td>
+							</tr>`;
+							body.append(row);
+						});
+					}
+				});
+			}
+			LoadBooks();
+
+			$("#reloadTable").on('click', function() {
+				LoadBooks();
+			})
+
+			$('#deleteBookModal').on('show.bs.modal', function (event) {
+					var button = $(event.relatedTarget);
+					var bookId = button[0].getAttribute("book-id");
+					$('#DeleteBookButton').attr("book-id", bookId);
+			});
+
+			$(document).on('submit', '#DeleteBookForm', function (e) {
+				e.preventDefault();
+				var bookId = $('#DeleteBookButton').attr('book-id');
+				$.ajax({
+					url: '/api/books/' + bookId,
+					type: 'DELETE',
+					success: function (result) {
+						$('#deleteBookModal').modal('hide');
+						LoadBooks();
+					}
+				});
+			});
+	});
+</script>
+
+<div class="container-fluid" style="height:100%">
+	<div class="table-responsive">
+		<div class="table-wrapper">
+			<div class="table-title">
+				<div class="row">
+					<div class="col-xs-6">
+						<h2>Manage <b>Books</b></h2>
+					</div>
+					<div class="col-xs-6">
+						<button class="btn btn-success" id="reloadTable">Reload</button>
+						<a href="#AddBookModal" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#AddBookModal"><i class="material-icons">&#xE147;</i> <span>Add New Book</span></a>
+					</div>
+				</div>
+			</div>
+			<div class="table-responsive" style="height: 500px; overflow-y: auto;">
+				<table class="table table-striped table-bordered " style="max-height:100%">
+					<thead>
+						<tr>
+							<th style="position: sticky; top: 0; z-index: 2;">ID</th>
+							<th style="position: sticky; top: 0; z-index: 2;">Name</th>
+							<th style="position: sticky; top: 0; z-index: 2;">Authors</th>
+							<th style="position: sticky; top: 0; z-index: 2;">Categories</th>
+							<th style="position: sticky; top: 0; z-index: 2;">Publisher</th>
+							<th style="position: sticky; top: 0; z-index: 2;">Total Copies</th>
+							<th style="position: sticky; top: 0; z-index: 2;">AvailableCopies</th>
+							<th style="position: sticky; top: 0; z-index: 2;">Actions</th>
+						</tr>
+					</thead>
+					<tbody id="BookTableBody">
+
+					</tbody>
+				</table>
+			</div>
+			@* <div class="clearfix"> *@
+			@* 	<div class="hint-text">Showing <b>5</b> out of <b>25</b> entries</div> *@
+			@* 	<ul class="pagination"> *@
+			@* 		<li class="page-item disabled"><a href="#">Previous</a></li> *@
+			@* 		<li class="page-item active"><a href="#" class="page-link">1</a></li> *@
+			@* 		<li class="page-item"><a href="#" class="page-link">2</a></li> *@
+			@* 		<li class="page-item"><a href="#" class="page-link">3</a></li> *@
+			@* 		<li class="page-item"><a href="#" class="page-link">4</a></li> *@
+			@* 		<li class="page-item"><a href="#" class="page-link">5</a></li> *@
+			@* 		<li class="page-item"><a href="#" class="page-link">Next</a></li> *@
+			@* 	</ul> *@
+			@* </div> *@
+		</div>
+	</div>
+</div>
+<!-- Edit Modal HTML -->
+<div id="AddBookModal" class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form id="AddBookForm" asp-action="Create" asp-controller="Books">
+				<div class="modal-header d-flex justify-content-between">
+					<h4 class="modal-title">Add Book</h4>
+					<button type="button" class="btn" data-bs-dismiss="modal" aria-label="Close" style="font-size: 1.5rem;">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body" id="createFormBookModal">
+				</div>
+				<span class="text-danger mx-5" id="AddValidText"></span>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
+					<div class="form-group">
+						<input type="submit" value="Create" class="btn btn-primary" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- Edit Modal HTML -->
+<div id="editBookModal" class="modal fade" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form id="editFormBook" asp-action="Edit" asp-controller="Books">
+				<div class="modal-header  d-flex justify-content-between">
+					<h4 class="modal-title">Edit Book</h4>
+					<button type="button" class="btn" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body" id="EditBookFormBody">
+				</div>
+				<span class="text-danger mx-5" id="EditValidText"></span>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
+					<div class="form-group">
+						<input type="submit" id="buttonEditSave" value="Save" class="btn btn-primary" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- Delete Modal HTML -->
+<div id="deleteBookModal" class="modal fade" aria-labelledby="deleteEmployeeModalLabel" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form id="DeleteBookForm">
+				<div class="modal-header d-flex justify-content-between">
+					<h4 class="modal-title">Delete Employee</h4>
+					<button type="button" class="btn" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body" id="DeleteBodyForm">
+					<p>Are you sure you want to delete these Records?</p>
+					<p class="text-warning"><small>This action cannot be undone.</small></p>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-bs-dismiss="modal" value="Cancel">
+					<input type="submit" id="DeleteBookButton" class="btn btn-danger" value="Delete">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+

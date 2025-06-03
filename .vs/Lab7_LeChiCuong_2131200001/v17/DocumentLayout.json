@@ -1,0 +1,212 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\CSE443\\Lab7\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\controllers\\api\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:controllers\\api\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\controllers\\api\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:controllers\\api\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\views\\admin\\usertable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:views\\admin\\usertable.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\views\\admin\\bookmanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:views\\admin\\bookmanagement.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:models\\userrole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|d:\\cse443\\lab7\\controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{39D73749-5831-4CF8-ADCB-FB9AE2658990}|Lab7_LeChiCuong_2131200001.csproj|solutionrelative:controllers\\authenticatecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\CSE443\\Lab7\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T07:01:49.727Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserRole.cs",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Models\\UserRole.cs",
+              "RelativeDocumentMoniker": "Models\\UserRole.cs",
+              "ToolTip": "D:\\CSE443\\Lab7\\Models\\UserRole.cs",
+              "RelativeToolTip": "Models\\UserRole.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T16:08:58.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Role.cs",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "Models\\Role.cs",
+              "ToolTip": "D:\\CSE443\\Lab7\\Models\\Role.cs",
+              "RelativeToolTip": "Models\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T15:58:11.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Controllers\\API\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\API\\UsersController.cs",
+              "ToolTip": "D:\\CSE443\\Lab7\\Controllers\\API\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\API\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T15:57:30.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BookManagement.cshtml",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Views\\Admin\\BookManagement.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\BookManagement.cshtml",
+              "ToolTip": "D:\\CSE443\\Lab7\\Views\\Admin\\BookManagement.cshtml",
+              "RelativeToolTip": "Views\\Admin\\BookManagement.cshtml",
+              "ViewState": "AgIAAAUAAAAAAAAAAADwvx4AAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T15:01:11.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Controllers\\API\\BooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\API\\BooksController.cs",
+              "ToolTip": "D:\\CSE443\\Lab7\\Controllers\\API\\BooksController.cs",
+              "RelativeToolTip": "Controllers\\API\\BooksController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T14:33:30.247Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserTable.cshtml",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Views\\Admin\\UserTable.cshtml",
+              "RelativeDocumentMoniker": "Views\\Admin\\UserTable.cshtml",
+              "ToolTip": "D:\\CSE443\\Lab7\\Views\\Admin\\UserTable.cshtml",
+              "RelativeToolTip": "Views\\Admin\\UserTable.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAJAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-03T12:41:44.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminController.cs",
+              "ToolTip": "D:\\CSE443\\Lab7\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "Controllers\\AdminController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:04:46.691Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "D:\\CSE443\\Lab7\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAwwL8AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T09:45:03.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AuthenticateController.cs",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Controllers\\AuthenticateController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthenticateController.cs",
+              "ToolTip": "D:\\CSE443\\Lab7\\Controllers\\AuthenticateController.cs",
+              "RelativeToolTip": "Controllers\\AuthenticateController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T07:05:04.28Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\CSE443\\Lab7\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AccountController.cs",
+              "ToolTip": "D:\\CSE443\\Lab7\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Controllers\\AccountController.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAkwEUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T07:04:40.129Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

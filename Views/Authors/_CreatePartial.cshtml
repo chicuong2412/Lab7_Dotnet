@@ -1,0 +1,48 @@
+﻿@model Lab7_LeChiCuong_2131200001.Models.Author
+
+@{
+	ViewData["Title"] = "Create";
+}
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+	<label asp-for="FirstName" class="control-label"></label>
+	<input asp-for="FirstName" class="form-control" />
+	<span asp-validation-for="FirstName" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="LastName" class="control-label"></label>
+	<input asp-for="LastName" class="form-control" />
+	<span asp-validation-for="LastName" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="DateOfBirth" class="control-label"></label>
+	<input asp-for="DateOfBirth" class="form-control" />
+	<span asp-validation-for="DateOfBirth" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Biography" class="control-label"></label>
+	<input asp-for="Biography" class="form-control" />
+	<span asp-validation-for="Biography" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Nationality" class="control-label"></label>
+	<input asp-for="Nationality" class="form-control" />
+	<span asp-validation-for="Nationality" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Email" class="control-label"></label>
+	<input asp-for="Email" class="form-control" />
+	<span asp-validation-for="Email" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Website" class="control-label"></label>
+	<input asp-for="Website" class="form-control" />
+	<span asp-validation-for="Website" class="text-danger"></span>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

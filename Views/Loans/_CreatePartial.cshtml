@@ -1,0 +1,41 @@
+﻿@model Lab7_LeChiCuong_2131200001.Models.Loan
+
+@{
+	ViewData["Title"] = "Create";
+}
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="form-group">
+	<label asp-for="LoanDate" class="control-label"></label>
+	<input asp-for="LoanDate" class="form-control" />
+	<span asp-validation-for="LoanDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="DueDate" class="control-label"></label>
+	<input asp-for="DueDate" class="form-control" />
+	<span asp-validation-for="DueDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="ReturnDate" class="control-label"></label>
+	<input asp-for="ReturnDate" class="form-control" />
+	<span asp-validation-for="ReturnDate" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="Status" class="control-label"></label>
+	<input asp-for="Status" class="form-control" />
+	<span asp-validation-for="Status" class="text-danger"></span>
+</div>
+<div class="form-group">
+	<label asp-for="UserId" class="control-label"></label>
+	<select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+</div>
+<div class="form-group">
+	<label asp-for="BookId" class="control-label"></label>
+	<select asp-for="BookId" class="form-control" asp-items="ViewBag.BookId"></select>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

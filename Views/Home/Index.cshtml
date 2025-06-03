@@ -1,0 +1,49 @@
+﻿@model List<Book>
+@{
+	ViewData["Title"] = "Home Page";
+	var carousels = ViewBag.Carousels;
+}
+
+<div id="carouselExample" class="carousel slide">
+	<div class="carousel-inner">
+		@foreach (var item in carousels)
+		{
+			<div class="carousel-item @(item.Order == 1 ? "active" : "")">
+				<img src="@item.ImageUrl" class="d-block w-100" alt="...">
+			</div> 
+		}
+	</div>
+	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Previous</span>
+	</button>
+	<button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="visually-hidden">Next</span>
+	</button>
+</div>
+
+<div class="text-center mt-2">
+	<div class="col-12 p-2 bg-danger text-white text-center">
+		<h5 class="m-0">TÀI LIỆU SỐ SÁCH THAM KHẢO (CẤP 2)</h5>
+	</div>
+</div>
+
+<div class="container mt-4">
+	<div class="row">
+		@foreach (var book in Model)
+		{
+			<div class="col-md-3 col-sm-6 mb-4">
+				<div class="card h-100">
+					<img src="@book.Avatar" class="card-img-top p-2" alt="@book.Title">
+					<div class="card-body">
+						<h6 class="card-title">@book.Title</h6>
+					</div>
+					<div class="card-footer bg-white border-0 text-center">
+						<a asp-controller="Book" asp-action="Index" asp-route-bookCode="@book.BookCode" class="btn btn-success btn-sm">Xem chi tiết</a>
+					</div>
+				</div>
+			</div>
+		}
+	</div>
+</div>

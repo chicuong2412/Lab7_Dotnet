@@ -1,0 +1,56 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="mt-5">
+    <div style="width: 40%" class="px-lg-5 pt-4 pb-lg-5 rounded-2 authContainer">
+        <h4 class="mb-3">Đăng ký</h4>
+        <p class="text-muted">Chào mừng! Vui lòng nhập thông tin chi tiết của bạn.</p>
+        <form>
+            <div class="mb-3">
+                <label for="fullName" class="form-label">
+                    <span class="text-danger">*</span> Họ và tên:
+                </label>
+                <input type="text" class="form-control" id="fullName" placeholder="Nhập họ và tên">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">
+                    <span class="text-danger">*</span> E-mail:
+                </label>
+                <input type="email" class="form-control" id="email" placeholder="Nhập email">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">
+                    <span class="text-danger">*</span> Mật khẩu:
+                </label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="password" placeholder="Nhập mật khẩu">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="confirmPassword" class="form-label">
+                    <span class="text-danger">*</span> Xác nhận mật khẩu:
+                </label>
+                <div class="input-group">
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Nhập lại mật khẩu">
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="rememberMe">
+                    <label class="form-check-label" for="rememberMe">
+                        Tôi đã đọc <a class="text-decoration-none">quy định</a>
+                    </label>
+                </div>
+            </div>
+
+            <div class="d-grid mb-2">
+                <button type="submit" class="btn btn-primary rounded-pill">Đăng ký</button>
+            </div>
+
+            <p class="text-center">Bạn đã là thành viên? <a asp-controller="Authenticate" asp-action="Login" class="text-decoration-none">Đăng nhập ngay!</a></p>
+        </form>
+    </div>
+</div>
